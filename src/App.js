@@ -58,22 +58,23 @@ class App extends Component {
 		const { select, start, questionIndex, gameOver, score } = this.state;
 		const { questions } = this.props;
 		return (
-			start ? <QuestionDisplay 
-								questions={questions}
-								next={this.nextQuestion} 
-								select={select} 
-								onCorrect={this.incrementScore}
-								questionIndex={questionIndex}
-								length={questions.length}
-								onAnswerSelect={this.onAnswerSelect}
-							/> : 
-							<StartMenu 
-								gameOver={gameOver} 
-								score={score}
-								total={questions.length}
-								fetch={fetchQuestions}
-								startGame={this.startGame}
-							/>
+			start ? 
+				<QuestionDisplay 
+					questions={questions}
+					next={this.nextQuestion} 
+					select={select} 
+					onCorrect={this.incrementScore}
+					questionIndex={questionIndex}
+					length={questions.length}
+					onAnswerSelect={this.onAnswerSelect}
+				/> : 
+				<StartMenu 
+					gameOver={gameOver} 
+					score={score}
+					total={questions.length}
+					fetch={fetchQuestions}
+					startGame={this.startGame}
+				/>
 		);
 	}
 }
